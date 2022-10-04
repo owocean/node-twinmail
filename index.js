@@ -185,6 +185,15 @@ function post(sock, msg) {
         files.writeDB(db);
         sock.write('20 text/plain\r\n\r\n');
         sock.end();
+        if ((db['outbox.' + req.server].length % 5)-1 == 0) {
+            let sock = tls.connect({
+                host, port: 1965, rejectUnauthorized: false
+            }, function () {
+                let s = CKT.parse(fs.readFileSync('config.txt').toString('utf-8'));
+                let body = "hostname=" + s.hostname + "\nport=" + s.port + "\r\n";
+                sock.write('twin://' + host + '/callme#' + body.length + "\r\n" + body);
+            });
+        }
     } else {
         sock.write('61 Unauthorized\r\n');
         sock.end();
