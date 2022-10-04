@@ -1,0 +1,17 @@
+{
+  "name": "twinmail",
+  "version": "1.0.0",
+  "description": "Gemini-based mail server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "owocean",
+  "license": "ISC",
+  "dependencies": {
+    "argon2": "^0.29.1",
+    "cktjs": "^1.0.5",
+    "sodium-native": "^3.4.1"
+  }
+}
