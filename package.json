@@ -10,8 +10,6 @@
   "author": "owocean",
   "license": "ISC",
   "dependencies": {
-    "argon2": "^0.29.1",
-    "cktjs": "^1.0.5",
-    "sodium-native": "^3.4.1"
+    "argon2": "^0.29.1"
   }
 }

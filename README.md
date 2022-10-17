@@ -21,23 +21,11 @@ $ npm start
 upon running for the first time, `store.json`, `config.txt`, and `mail/` will be created automatically in the active directory. edit `config.txt` accordingly!
 
 ## moderating the server
-since there are some things that can't be handled automatically like account creation or unsubscribing from other servers, a CLI script named `admin.js` was included. this script can be spawned by other processes if desired.
+since account creation may be handled differently among servers, a CLI script named `admin.js` was included. this script can be spawned by other processes if desired.
 ```sh
 # creating a new user
 $ node admin newuser username password
 
 # delete a user
 $ node admin deluser username
-
-# subscribe to a server (this happens automatically)
-$ node admin sub hostname
-
-# unsubscribe from a server
-$ node admin unsub hostname
-
-# ask a server to subscribe to you (this happens automatically)
-$ node admin callme hostname
-
-# ask a server to unsubscribe from you
-$ node admin deleteme hostname
 ```
