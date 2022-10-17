@@ -361,7 +361,7 @@ function parse(str) {
         if (section != null) {
             k = section[1];
         } else {
-            let declaration = line.match(/^(.+)=(.+)$/);
+            let declaration = line.trim().match(/^(.+)=(.+)$/);
             if (declaration != null) {
                 if (k == null) {
                     obj[declaration[1].trim()] = declaration[2].trim();
